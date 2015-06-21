@@ -1,7 +1,7 @@
 
 # auto_ssh_tools
 
-This is a suit of tools written in shell for automatic ssh and scp, without entering passwords manually. To use the tools, you need to install expect.  
+This is a suit of tools written in shell for automatic ssh and scp, without entering passwords manually. To use the tools, you need to install `expect`.  
 
 You can write a config file with only one line like this:
 
