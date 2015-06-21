@@ -1,0 +1,38 @@
+#!/bin/bash
+# Author: casheywen@qq.com
+
+if [[ $# -lt 2 ]]
+then
+    echo "Usage: $0 ipfile cmd"
+    exit
+fi
+
+MACHINE_LIST="$1"
+CMD="$2"
+TMP="/tmp/login${RANDOM}"
+
+read IP USER PASSWORD PORT < "${MACHINE_LIST}"
+
+cat << EOF > "${TMP}"
+set timeout 8
+spawn -noecho ssh ${USER}@${IP} -p${PORT} -o StrictHostKeyChecking=no "${CMD}"
+while (1) {
+    expect  {
+        "yes/no)?" { send "yes\r";puts "yes" }
+        "assword:" { send "${PASSWORD}\r"; break }
+        timeout  { puts "${IP} time out" ;exit 2; break }
+    }
+}
+
+expect eof
+
+catch wait result
+exit [lindex \$result 3]
+
+EOF
+
+expect "${TMP}"
+RET=$?
+
+rm "${TMP}"
+exit ${RET}
