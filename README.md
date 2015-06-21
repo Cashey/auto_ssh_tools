@@ -23,7 +23,7 @@ Other tools in `auto_ssh_tool/` are implemented in the same way.
 
 If you just want to login to your server to execute a command and then exit, you can use `gotocmd` instead:
 
-	 
+	 ./goto demo_ipfile/demo_machine 'ls -ltr'
 
 -----
 
@@ -33,10 +33,12 @@ If you need to pull file from your remote server or push local file to your remo
 
 To pull a file, use command like this:
 
-	./pullfile demo_ipfile/demo_machine /root/test.txt /tmp
+	./pullfile demo_ipfile/demo_machine /root/file_to_pull.txt /tmp/
 
-This 
+Then the `/root/file_to_pull.txt` on the remote server will be transfered to your local directory `/tmp` via scp.
 
-	
-	
+To push a file, use command like this:
 
+	./pushfile demo_ipfile/demo_machine /tmp/file_to_push.txt /root/
+
+Then the `/tmp/file_to_push.txt` in your local `/tmp` directory will be transfered to the remote server into the `/root/` directory.
