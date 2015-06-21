@@ -7,9 +7,9 @@ You can write a config file with only one line like this:
 
 	192.168.0.122 root your_password 22
 
-The first field  is the domain name or ip of your linux server. The second and third field are user name and password that you login with,  the last field is the port number that your ssh server listening on.
+The first field  is the domain name or ip of your linux server. The second and third fields are user name and password that you login with,  the last field is the port number that your ssh server listening on.
 
-Save this file, for example i save it into `demo_ipfile/demo_machine`.
+Save this file, for example I save it into `demo_ipfile/demo_machine`.
 
 To do the automatic login, just goto the `auto_ssh_tool/` directory, and type the command:
 
