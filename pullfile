@@ -14,6 +14,12 @@ TMP="/tmp/pull${RANDOM}"
 
 read IP USER PASSWORD PORT < "${MACHINE_LIST}"
 
+if [[ ${?} -ne 0 || -z "${PORT}" ]]
+then
+    echo "${0}: ${MACHINE_LIST} does not exist or format error" >&2
+    exit 1
+fi
+
 cat << EOF > "${TMP}"
 set timeout 8
 spawn -noecho scp -P${PORT} -r ${USER}@${IP}:${SRC_PATH} ${DST_PATH}
