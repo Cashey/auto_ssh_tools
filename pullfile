@@ -22,7 +22,7 @@ fi
 
 cat << EOF > "${TMP}"
 set timeout 8
-spawn -noecho scp -P${PORT} -r ${USER}@${IP}:${SRC_PATH} ${DST_PATH}
+spawn -noecho scp -P${PORT} -r "${USER}@${IP}:${SRC_PATH}" "${DST_PATH}"
 while (1) {
     expect  {
         "yes/no)?" { send "yes\r";puts "yes" }
