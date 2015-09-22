@@ -51,7 +51,7 @@
 
 这样你本机上的 `/tmp/file_to_push.txt` 就会被scp到另一台机器上的 `/root/` 目录下。
 
------
+
 
 ----
 
@@ -94,7 +94,7 @@ To use the tools, you need to install `expect`.
 ---
 > **How this is done:**
 > 
->    The `goto` script generates an expect script in `/tmp` with a random filename,  the it calls expect to execute the  expect script to complete the login.
+>    The `goto` script generates an expect script in `/tmp` with a random filename,  then it calls expect to execute the  expect script to complete the login.
 
 >    Other tools in `auto_ssh_tool/` are implemented in the same way. 
     
