@@ -35,8 +35,6 @@
 
 >  `auto_ssh_tool/` 目录下的其他工具也是用相同的方式实现的。
     
------
-
 # 自动scp传输文件
 
 如果你需要用scp从本机传送文件到其他服务器，将其他服务器的文件传送到本机， `pullfile` 和 `pushfile` 工具就可以大显身手了。
@@ -53,6 +51,13 @@
 
 这样你本机上的 `/tmp/file_to_push.txt` 就会被scp到另一台机器上的 `/root/` 目录下。
 
+-----
+
+----
+
+----
+
+# English (Manually Translated)
 -----
 
 # auto_ssh_tools
