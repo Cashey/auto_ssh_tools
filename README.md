@@ -1,33 +1,43 @@
 
 # auto_ssh_tools
 
-This is a suit of tools written in shell for automatic ssh and scp, without entering passwords manually. To use the tools, you need to install `expect`.  
+This is a suit of tools written in shell for automatic ssh and scp, without entering passwords manually. 
 
-You can write a config file with only one line like this:
+# Pre-equisitions
 
-	192.168.0.122 root your_password 22
+To use the tools, you need to install `expect`.  
 
-The first field  is the domain name or ip of your linux server. The second and third fields are user name and password that you login with,  the last field is the port number that your ssh server listening on.
+# How to use
 
-Save this file, for example I save it into `servers/demo_svr`.
+1. Write a config file with only one line like this:
 
-To do the automatic login, just goto the `auto_ssh_tool/` directory, and type the command:
+		192.168.0.122 root your_password 22
 
-	./goto servers/demo_svr
+	The first field  is the domain name or ip of your linux server. The second and third fields are user name and password that you login with,  the last field is the port number that your ssh server listening on.
+	
+	Save this file, for example I save it into `servers/demo_svr`.
+	
+2.	To do the automatic login, just goto the `auto_ssh_tool/` directory, and type the command:
 
-Then you will find you've successfully logged into your server.
+		./goto servers/demo_svr
 
-The `goto` script generates an expect script in `/tmp` with a random filename,  the it calls expect to execute the  expect script to complete the login.
 
-Other tools in `auto_ssh_tool/` are implemented in the same way. 
+	Then you will find you've successfully logged into your server.
 
-If you just want to login to your server to execute a command and then exit, you can use `gotocmd` instead:
+3.	If you just want to login to your server to execute a command and then exit, you can use `gotocmd` instead:
+	
+		 ./goto servers/demo_svr 'ls -ltr'
 
-	 ./goto servers/demo_svr 'ls -ltr'
+---
+> **How this is done:**
+> 
+>	The `goto` script generates an expect script in `/tmp` with a random filename,  the it calls expect to execute the  expect script to complete the login.
 
+>	Other tools in `auto_ssh_tool/` are implemented in the same way. 
+	
 -----
 
-# automatic scp file transfer
+# Automatic scp file transfer
 
 If you need to pull file from your remote server or push local file to your remote server via scp, the `pullfile` and `pushfile` scripts will be useful.
 
