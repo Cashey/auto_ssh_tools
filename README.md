@@ -13,7 +13,7 @@ To use the tools, you need to install `expect`.
 
 		192.168.0.122 root your_password 22
 
-	The first field  is the domain name or ip of your linux server. The second and third fields are user name and password that you login with,  the last field is the port number that your ssh server listening on.
+	The first column is the domain name or ip of your linux server. The second and third columns are user name and password that you login with, the last column is the port number that your ssh server listening on.
 	
 	Save this file, for example I save it into `servers/demo_svr`.
 	
