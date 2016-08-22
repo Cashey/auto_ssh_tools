@@ -24,9 +24,9 @@
     
     > goto 的第一个参数为配置文件路径。
 
-3. If you just want to login to your server to execute a command and then exit, you can use `gotocmd` instead:
+3. 如果你只需要登录后执行一条命令就退出，你可以使用 `gotocmd` 命令:
     
-         ./goto servers/demo_svr 'ls -ltr'
+         ./gotocmd servers/demo_svr 'ls -ltr'
 
 ---
 > **实现原理：**
@@ -89,7 +89,7 @@ To use the tools, you need to install `expect`.
 
 3.    If you just want to login to your server to execute a command and then exit, you can use `gotocmd` instead:
     
-         ./goto servers/demo_svr 'ls -ltr'
+         ./gotocmd servers/demo_svr 'ls -ltr'
 
 ---
 > **How this is done:**
